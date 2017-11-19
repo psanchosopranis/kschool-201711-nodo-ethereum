@@ -1,0 +1,19 @@
+{
+  "timestamp": "0x00",
+  "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "extraData": "0x00",
+  "gasLimit": "0x8000000",
+  "difficulty": "0x400",
+  "alloc": {
+    "0xe5614d52c36da907ed903d7b10ce802c6bdcc751": { "balance": "50000000000000000000000000" },
+    "0x0153bdafc52115991b9c28619015f3bd5e549783": { "balance": "50000000000000000000000000" },
+    "0xcebc3f74f2317aaa8985be899d67e4f9e6bf2d99": { "balance": "50000000000000000000000000" },
+    "0x1d3a1e8f498f2b3ce7af010f0efd6a8c26e4bc85": { "balance": "50000000000000000000000000" }
+  },
+  "config": {
+    "chainId": 15,
+    "homesteadBlock": 0,
+    "eip155Block": 0,
+    "eip158Block": 0
+  }
+} 
