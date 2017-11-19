@@ -1,5 +1,5 @@
 # kschool-201711-nodo-ethereum
-Notas para arranque de un Nodo Etherum utilizadas durante el curso "Curso de Desarrollo de Aplicaciones Ethereum"
+Notas para arranque de un Nodo Ethereum utilizadas durante el curso "Curso de Desarrollo de Aplicaciones Ethereum"
 
 Por si puede serle de utilidad a alguien he recogido en este post los pasos que he seguido para arrancar con éxito el Nodo Ethereum. Asimismo he creado un script `bash` para poder rearrancar el nodo en cada sucesiva sesión.
 
