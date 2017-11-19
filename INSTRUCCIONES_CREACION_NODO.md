@@ -27,7 +27,7 @@ UBUNTU_CODENAME=zesty
 > Nota: La descripción de los pasos las detallo a bastante bajo nivel para aquellos que puedan tener poca o nula familiaridad con un entorno Linux. Para quien tenga más familiaridad con linux le puede servir igualmente como bitácora de los pasos seguidos.
 
 
-####Paso 1) Asegurar posicionarnos en el directorio HOME del usuario con el que nos hemos logado:
+#### Paso 1) Asegurar posicionarnos en el directorio HOME del usuario con el que nos hemos logado:
 ```
 devel1@vbxub1704:~$ echo $HOME
 /home/devel1
@@ -37,10 +37,10 @@ devel1@vbxub1704:~$ pwd
 devel1@vbxub1704:~$ 
 ```
 
-####Paso 2) Comprobamos si en la carpeta HOME del usuario existe un directorio '**bin**'. 
+#### Paso 2) Comprobamos si en la carpeta HOME del usuario existe un directorio '**bin**'. 
 Si no es así: lo crearemos. La recomendación de disponer de una carpeta 'bin' estriba en que es un lugar adecuado para ubicar nuestros 'scripts' de usuario.
 
-#####Comprobación:
+##### Comprobación:
 * Si No existe ==> lo crearemos.
 
 > (Nota: en mi ejemplo **$HOME** se resuelve a '**/home/devel1**'):
@@ -59,9 +59,9 @@ drwxr-xr-x  2 devel1 devel1 4096 nov 17 21:24 .
 drwxr-xr-x 24 devel1 devel1 4096 nov 17 21:24 ..
 ... ... ... ...
 ```
-####Paso 3) Comprobamos si el directorio **$HOME/bin** (en mi caso `/home/devel1/bin`) se encuentra incluido en el **PATH** asignado al usuario, pues de esta manera podremos invocar nuestros 'scripts' de utilidad directamente sin necesidad de especificar el directorio donde se encuentran en el momento de su invocación:
+#### Paso 3) Comprobamos si el directorio **$HOME/bin** (en mi caso `/home/devel1/bin`) se encuentra incluido en el **PATH** asignado al usuario, pues de esta manera podremos invocar nuestros 'scripts' de utilidad directamente sin necesidad de especificar el directorio donde se encuentran en el momento de su invocación:
 
-#####**Posibilidad 1: invocando `echo $PATH` el directorio HOME ( en mi caso `/home/devel1/bin` ) NO está presente**
+##### **Posibilidad 1: invocando `echo $PATH` el directorio HOME ( en mi caso `/home/devel1/bin` ) NO está presente**
 
 ```
 devel1@vbxub1704:~$ echo $PATH
@@ -69,7 +69,7 @@ devel1@vbxub1704:~$ echo $PATH
 ```
 En este ejemplo puede observarse que **NO SE ENCUENTRA ninguna entrada para** `/home/devel1/bin` en la lista de directorios (separados por el caracter de separacion '**:**') ==>  Lo que haremos entonces es asegurar que se incluya de forma permanente en las siguientes veces que entremos en una sesión de terminal. Para ello es necesario incluir  **_AL FINAL_** del archivo `.bashrc` que reside en el directorio HOME del usuario la ampliación de la variable de entorno **PATH** para que incluya el direcorio '**bin'**.
 
-#####Alternativas:
+##### Alternativas:
 1. Editar con **vi** / **nano** / **emacs** el archivo **.bashrc** (_no recomendable para no iniciados en Linux_) 
 2. Si se está utilizando el entorno grafico  puede usuarse el editor de texto **gedit** 
 (_más recomendable para no iniciados en Linux_) `gedit .bashrc`
@@ -81,7 +81,7 @@ En este ejemplo puede observarse que **NO SE ENCUENTRA ninguna entrada para** `/
 3.5. Verificar que el nuevo valor de la variable de entorno PATH incluye el directorio '**bin**' en el directorio **HOME** del usuario (_en mi ejemplo: /home/devel1/bin_). Invocamos nuevamente `echo $PATH` y esta vez ya deberá aparecer el directorio. Por ejemplo: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/devel1/bin`
 
 
-#####**Posibilidad 2: invocando `echo $PATH` el directorio HOME ( en mi caso `/home/devel1/bin` ) NO está presente**
+##### **Posibilidad 2: invocando `echo $PATH` el directorio HOME ( en mi caso `/home/devel1/bin` ) NO está presente**
 ```
 devel1@vbxub1704:~$ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/devel1/bin
@@ -89,14 +89,14 @@ devel1@vbxub1704:~$ echo $PATH
 En este caso seguimos con el siguiente paso.
 
 
-####Paso 4) Vamos a crear un directorio para alojar los datos (parámetro `datadir` en lo sucesivo) del nodo Ethereum.
+#### Paso 4) Vamos a crear un directorio para alojar los datos (parámetro `datadir` en lo sucesivo) del nodo Ethereum.
 
 En este ejemplo voy a usar un directorio con nombre `GETHDATOS` en el directorio HOME del usuario es decir, que podrá ser referenciado en lo sucesivo como `$HOME/GETHDATOS`. 
 
 > Nota:  el nombre en mayusculas es intencional para reducir la posibilidad que el nombre "colisione" con algun otro directorio que casualmente pudiera existir: no es nada común la práctica de usar un nombre en mayusculas para directorios en Linux
 
 
-#####Comprobación:
+##### Comprobación:
 
 - Si No existe ==> lo crearemos:
 
@@ -199,7 +199,7 @@ Address: {1d3a1e8f498f2b3ce7af010f0efd6a8c26e4bc85}
 
 > Nota: Adviértase que estos valores serán diferentes de los que se obtengan al reproducir estos pasos en otra ejecución.
 
-####Paso 6) Preparación del `"Bloque Génesis"` del nuevo nodo Ethereum
+#### Paso 6) Preparación del `"Bloque Génesis"` del nuevo nodo Ethereum
 
 Para ello usaremos un nuevo 'truco' para poder tener dos ficheros abiertos al mismo tiempo como dos 'pestañas' en el editor `gedit`: invocar el comando `gedit` _'en fondo'_ con un `&` al final:
 ```
