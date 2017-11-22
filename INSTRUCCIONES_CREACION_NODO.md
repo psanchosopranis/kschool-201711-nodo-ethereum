@@ -76,7 +76,7 @@ En este ejemplo puede observarse que **NO SE ENCUENTRA ninguna entrada para** `/
 3.  Hacer un '**append**' sobre el fichero **.bashrc** (_igualmente recomendable para no iniciados en Linux_):
 3.1 Primero hacer una copia de seguridad por si acaso: `cp --verbose $HOME/.bashrc $HOME/.bashrc_BACKUP_$(date +"%Y-%m-%d")`
 3.2 Agregar al final del archivo [ **OJO** usar '**>>**' (append) y nó '**>**' ("machacar" el archivo) ] `echo 'export PATH=$PATH:$HOME/bin' >> $HOME/.bashrc`
-3.3 Comprobar que efectivamente la instrucción `export $PATH=$PATH:$HOME/bin` es la última linea del archivo. Mediante: `tail -1 $HOME/.bashrc` debe indicar: `export $PATH=$PATH:$HOME/bin`
+3.3 Comprobar que efectivamente la instrucción `export $PATH=$PATH:$HOME/bin` es la última linea del archivo. Mediante: `tail -1 $HOME/.bashrc` debe indicar: `export PATH=$PATH:$HOME/bin`
 3.4. Salir de la sesión de consola y iniciar una nueva de sesión de consola (con `exit` o `CRTL+D`).
 3.5. Verificar que el nuevo valor de la variable de entorno PATH incluye el directorio '**bin**' en el directorio **HOME** del usuario (_en mi ejemplo: /home/devel1/bin_). Invocamos nuevamente `echo $PATH` y esta vez ya deberá aparecer el directorio. Por ejemplo: `/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/devel1/bin`
 
