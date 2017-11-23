@@ -276,7 +276,20 @@ devel1@vbxub1704:~$ cat $HOME/GETHDATOS/bloque_genesis.json
 }
 ```
 
-#### Paso 8) Ahora prepararemos el 'comando' de arranque efectivo del NODO Ethereum. 
+#### Paso 8) Inicializamos el NODO Ethereum con el 'Bloque Genesis' creado en el paso anterior
+
+Para ello utilizaremos el parametro `init`de `geth` ==> `geth --identity "test00" --datadir $HOME/GETHDATOS init $HOME/GETHDATOS/bloque_genesis.json`:
+```
+devel1@vbxub1704:~$ geth --identity "test00" --datadir $HOME/GETHDATOS init $HOME/GETHDATOS/bloque_genesis.json
+INFO [11-23|11:58:51] Allocated cache and file handles         database=/home/devel1/GETHDATOS/geth/chaindata cache=16 handles=16
+INFO [11-23|11:58:51] Writing custom genesis block 
+INFO [11-23|11:58:51] Successfully wrote genesis state         database=chaindata                             hash=51300b…aa3c65
+INFO [11-23|11:58:51] Allocated cache and file handles         database=/home/devel1/GETHDATOS/geth/lightchaindata cache=16 handles=16
+INFO [11-23|11:58:51] Writing custom genesis block 
+INFO [11-23|11:58:51] Successfully wrote genesis state         database=lightchaindata                             hash=51300b…aa3c65
+```
+
+#### Paso 9) Ahora prepararemos el 'comando' de arranque efectivo del NODO Ethereum. 
 
 1) Lo que voy a hacer PRIMERO es '_preparar_' sin '_ejecutar_' realmente el comando y, en su lugar crear un **archivo de script** en el directorio `$HOME/bin` (que creamos al principio) y así poder volver a lanzar la ejecución del NODO en sucesivas ocasiones lanzando EXACTAMENTE la misma instrucción.
 
@@ -296,7 +309,7 @@ debe venir seguido de un INTRO/Salto de linea EXCLUSIVAMENTE.
 set -x
 geth --identity "test00" \
 --mine --minerthreads=4 \
---datadir /home/devel1/GETHDATOS/ \
+--datadir $HOME/GETHDATOS/ \
 --port 30310 --rpc --rpcport 8110 \
 --networkid 4567890 \
 --nodiscover --maxpeers 0 \
